@@ -47,69 +47,29 @@
   a:hover { text-decoration-thickness: 2px; }
   .crumb { color: var(--muted); margin-bottom: 18px; }
   .crumb span { color: var(--accent); }
-  h1 {
-    font-size: 22px;
-    font-weight: 600;
-    margin: 0 0 12px 0;
-    letter-spacing: -0.01em;
-  }
-  h2 {
-    font-size: 16px;
-    font-weight: 600;
-    margin: 56px 0 18px 0;
-    letter-spacing: -0.005em;
-  }
+  h1 { font-size: 22px; font-weight: 600; margin: 0 0 12px 0; letter-spacing: -0.01em; }
+  h2 { font-size: 16px; font-weight: 600; margin: 56px 0 18px 0; letter-spacing: -0.005em; }
   h2 .num { color: var(--muted); font-weight: 400; margin-right: 10px; }
-  h3 {
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    color: var(--muted);
-    margin: 28px 0 8px 0;
-  }
+  h3 { font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); margin: 28px 0 8px 0; }
   p { margin: 12px 0; }
-  hr {
-    border: 0;
-    border-top: 1px solid var(--rule);
-    margin: 36px 0;
-  }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 36px 0; }
   .meta { color: var(--muted); margin: 6px 0 0 0; }
   .meta strong { color: var(--fg); font-weight: 500; }
   .updated { color: var(--muted); margin: 4px 0 24px; font-size: 13px; }
-  .box {
-    background: var(--box-bg);
-    border: 1px solid var(--box-rule);
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin: 18px 0;
-  }
+  .box { background: var(--box-bg); border: 1px solid var(--box-rule); border-radius: 6px; padding: 14px 18px; margin: 18px 0; }
   .links { display: grid; grid-template-columns: 70px 1fr; row-gap: 4px; column-gap: 12px; }
   .links .label { color: var(--muted); }
   .box .footnote { color: var(--muted); margin-top: 10px; font-size: 13px; }
-  pre {
-    background: var(--box-bg);
-    border: 1px solid var(--box-rule);
-    border-radius: 6px;
-    padding: 14px 18px;
-    margin: 14px 0;
-    overflow-x: auto;
-    font-size: 13px;
-    line-height: 1.55;
-  }
+  pre { background: var(--box-bg); border: 1px solid var(--box-rule); border-radius: 6px; padding: 14px 18px; margin: 14px 0; overflow-x: auto; font-size: 13px; line-height: 1.55; }
   code { font-family: var(--mono); }
-  ul { padding-left: 20px; margin: 10px 0; }
-  ol { padding-left: 20px; margin: 10px 0; }
+  ul, ol { padding-left: 20px; margin: 10px 0; }
   li { margin: 4px 0; }
+  table { border-collapse: collapse; width: 100%; margin: 12px 0; font-size: 13px; }
+  th, td { text-align: left; padding: 6px 12px 6px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; }
+  td code { white-space: nowrap; }
   .muted { color: var(--muted); }
-  footer {
-    margin-top: 80px;
-    padding-top: 20px;
-    border-top: 1px solid var(--rule);
-    color: var(--muted);
-    font-size: 12px;
-    text-align: center;
-  }
+  footer { margin-top: 80px; padding-top: 20px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 12px; text-align: center; }
 </style>
 </head>
 <body>
@@ -127,7 +87,7 @@
     <span class="label">replit</span><span class="muted">private workspace — ask Simon for an invite</span>
     <span class="label">contact</span><span><a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a></span>
   </div>
-  <div class="footnote">This page covers: project positioning · access · codebase map · current focus · code-reading method</div>
+  <div class="footnote">This page covers: project positioning · access · repository layout · active project · scripts · code-reading method</div>
 </div>
 
 <hr />
@@ -135,13 +95,13 @@
 <h2><span class="num">00</span>Project Positioning</h2>
 
 <h3>What this is</h3>
-<p><code>hanglisimonwang</code> is Simon Wang's private research workspace, built on the DocAI platform — a fullstack web app (Express + React + Postgres on Replit) for academic-paper publishing. It integrates with Google Workspace (Drive, Docs, Mail, Calendar, Sheets) and provides paper-publishing tooling: manuscript review, OpenReview integration, systematic reviews, reading-list tracing, lab-meeting minutes, scientific figures, posters, slides, and an AI chat aware of the active document context.</p>
+<p><code>hanglisimonwang</code> is Simon Wang's <strong>research-only</strong> private workspace. Its sole purpose is to support doing academic research in the broad sense — longitudinal studies, manuscript drafting, paper-publishing pipelines, literature wikis, and small analysis utilities. <strong>There is no web app here.</strong> The DocAI fullstack platform that previously lived in this Repl was stripped out on 2026-04-30; only research material and research-supporting scripts remain.</p>
 
 <h3>Who this page is for</h3>
 <p>Other AI agents (Cursor, Claude Code, Codex CLI, etc.) that Simon points at this workspace. Read this <em>first</em>, then ask Simon for a personal-access token to clone the private repo.</p>
 
 <h3>What is <em>not</em> here</h3>
-<p>Confidential research data, manuscript drafts, participant data, internal credentials, or anything covered by an NDA. This page lists only public, non-sensitive structural information.</p>
+<p>Confidential research data, manuscript drafts, participant data, or anything covered by an NDA. This page lists only public, non-sensitive structural information.</p>
 
 <hr />
 
@@ -151,26 +111,27 @@
 
 <pre><code>git clone https://&lt;token&gt;@github.com/tesolchina/hanglisimonwang.git
 cd hanglisimonwang
-cat replit.md          # canonical agent instructions
-ls projects/           # active research projects</code></pre>
+cat replit.md                                # canonical agent instructions
+ls projects/linda-speaking-research/         # the only active research project</code></pre>
 
 <p>If you do not have a token, email <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a> and explain which agent you are and which task you have been assigned.</p>
 
 <hr />
 
-<h2><span class="num">02</span>Codebase Map</h2>
+<h2><span class="num">02</span>Repository Layout</h2>
 
-<p>Zone-based organisation — before creating any file, check whether this type already exists in the right zone, and update it instead of duplicating.</p>
+<p>Minimalist, research-only. There is no <code>client/</code>, <code>server/</code>, <code>shared/</code>, <code>node_modules/</code>, or any web build pipeline.</p>
 
-<pre><code>client/  server/  shared/        Frontend, backend, shared types (Express + React + Drizzle)
-projects/                        Active research projects (see §03 below)
-prompts/                         System prompts for AI features
-data/                            Server-written runtime files (videos, voice profiles, paper wikis)
-server/tests/                    All test suites (regression, unit, e2e)
-server/migrations/               Drizzle-generated SQL migrations
-scripts/                         Build, post-merge, and one-off automation scripts</code></pre>
-
-<p class="muted">The previous <code>content/</code> tree (lab notes, business docs, personal workspace) was removed on 2026-04-30. All non-functional content now lives elsewhere — ask Simon if you need access to historical material.</p>
+<table>
+  <tr><th>Path</th><th>Contents</th></tr>
+  <tr><td><code>projects/linda-speaking-research/</code></td><td>The active research project (see §03)</td></tr>
+  <tr><td><code>data/papers/</code></td><td>Markdown wikis over journal slices (e.g. JEAP 2020–2024)</td></tr>
+  <tr><td><code>scripts/</code></td><td>Research-supporting Python and Node scripts (see §04)</td></tr>
+  <tr><td><code>pyproject.toml</code> + <code>uv.lock</code></td><td>Python research environment, managed with <code>uv</code></td></tr>
+  <tr><td><code>replit.nix</code></td><td>System packages (cairo, ffmpeg, ghostscript, harfbuzz, mupdf, R, Python, Postgres, etc.)</td></tr>
+  <tr><td><code>manuscript&nbsp;text&nbsp;-&nbsp;revision0425.docx</code></td><td>Working manuscript draft</td></tr>
+  <tr><td><code>replit.md</code></td><td>Canonical agent instructions — read this first</td></tr>
+</table>
 
 <hr />
 
@@ -186,43 +147,66 @@ scripts/                         Build, post-merge, and one-off automation scrip
 <h3>Working language</h3>
 <p>English for all deliverables (research proposals, paper outlines, methodology docs). Simon may write to you in Chinese; respond in English and produce English-language artefacts unless explicitly asked for Chinese on a specific file.</p>
 
-<h3>Out of scope (Apr 2026 cleanup)</h3>
-<p>Marketing/landing pages, the wider "labs" portfolio (Bazi, Bloom, Idea→Paper, Songwriting, Voice Profiles, Remotion/Video, Digital Human, Phet/Comm Workshops, etc.), the entire <code>content/</code> tree, and all non-Google integrations (Feishu, Tencent Docs, Shimo, WeChat, Aliyun SMS, Suno, Zoom) were removed. Some Feishu/Tencent imports remain stubbed in <code>server/features/</code> so the deeply-coupled chat/executor services keep compiling — the runtime features are no-ops or throw "removed".</p>
+<hr />
+
+<h2><span class="num">04</span>Scripts</h2>
+
+<p>All scripts live directly under <code>scripts/</code> and are runnable from the repo root. Every script is research-supporting; if you need to add a new one, follow the same pattern.</p>
+
+<table>
+  <tr><th>Script</th><th>Purpose</th></tr>
+  <tr><td><code>pdf_to_text.py</code></td><td>Extract text from PDFs (pdftotext / mupdf)</td></tr>
+  <tr><td><code>parse-pptx.py</code></td><td>Extract slides + speaker notes from <code>.pptx</code> files</td></tr>
+  <tr><td><code>humanize_local.py</code> · <code>humanize_manuscript.py</code></td><td>Light-touch manuscript de-bot-ifying utilities</td></tr>
+  <tr><td><code>build_assessment_pdf.py</code></td><td>Compile an assessment PDF from markdown + LaTeX</td></tr>
+  <tr><td><code>build_submission_docx.py</code></td><td>Compile a submission <code>.docx</code> from the working manuscript</td></tr>
+  <tr><td><code>backup_paper_1_to_gdoc.py</code> · <code>upload_paper_1_backup.mjs</code></td><td>Mirror manuscript revisions into Google Docs</td></tr>
+  <tr><td><code>jeap_wiki_ingest.py</code></td><td>Ingest JEAP papers into <code>data/papers/wiki/</code>; supports <code>--rebuild-index</code> and <code>--lint</code></td></tr>
+  <tr><td><code>md-to-docx.cjs</code></td><td>Convert markdown to <code>.docx</code></td></tr>
+  <tr><td><code>fetch-eap-ai-papers.ts</code></td><td>Fetch EAP/AI paper metadata from OpenAlex</td></tr>
+  <tr><td><code>publications/run_pipeline.sh</code></td><td>Full HKBU publications pipeline: parse → resolve (CrossRef + OpenAlex) → write to Google Sheet → download PDFs</td></tr>
+</table>
 
 <hr />
 
-<h2><span class="num">04</span>Code-Reading Method</h2>
+<h2><span class="num">05</span>Code-Reading Method</h2>
 
 <p>Recommended reading order when you first land in the repo:</p>
 
 <ol>
   <li><code>replit.md</code> — canonical agent instructions, scope, conventions</li>
-  <li><code>shared/schema.ts</code> — data model (Drizzle + drizzle-zod)</li>
-  <li><code>server/routes.ts</code> + <code>server/features/</code> — API surface and feature modules</li>
-  <li><code>client/src/App.tsx</code> — frontend routing (wouter)</li>
   <li><code>projects/linda-speaking-research/plan.md</code> — current research project (collaboration with Prof. Li — read-only unless invited)</li>
+  <li><code>data/papers/wiki/AGENTS.md</code> — paper-wiki schema and validation gates</li>
+  <li><code>scripts/</code> — pick the script most relevant to your task; all are short and self-documenting</li>
+  <li><code>pyproject.toml</code> — what Python packages are available</li>
 </ol>
 
-<h3>Key conventions</h3>
+<h3>Conventions</h3>
 <ul>
-  <li>PostgreSQL <code>snake_case</code> columns ↔ TypeScript <code>camelCase</code></li>
-  <li>Drizzle migrations are <strong>additive-only</strong> — never destructive</li>
-  <li>Routes stay thin; business logic lives in <code>server/services/</code> and <code>server/features/</code></li>
-  <li>System prompts are Markdown files in <code>server/prompts/</code> and <code>prompts/</code></li>
-  <li>All <code>log.error()</code> calls and audit events are persisted to the <code>chat_logs</code> table</li>
+  <li>Manage Python deps with <code>uv</code> (<code>uv add &lt;pkg&gt;</code> / <code>uv sync</code>) — never <code>pip install</code> directly.</li>
+  <li>Markdown is the working format for plans, literature notes, and wikis.</li>
+  <li>Long-form drafts are <code>.docx</code> in the project folder they belong to.</li>
+  <li>Run scripts from the repo root: <code>python3 scripts/&lt;name&gt;.py</code>.</li>
+  <li>The Replit GitHub connector handles GitHub auth — do not commit tokens.</li>
 </ul>
 
 <hr />
 
-<h2><span class="num">05</span>External Dependencies</h2>
+<h2><span class="num">06</span>External Dependencies</h2>
 
 <ul>
-  <li><strong>Google Workspace</strong> — sole identity provider (Google OAuth) and primary document/data integration (Drive, Docs, Mail, Calendar, Sheets, Tasks)</li>
-  <li><strong>LLM APIs</strong> — chat, content generation, tool execution (via Replit AI Integrations / OpenRouter)</li>
-  <li><strong>OpenAlex</strong> — academic metadata lookup</li>
+  <li><strong>Google Workspace</strong> — Drive, Docs, Mail, Calendar, Sheets, Tasks (sole identity provider via Google OAuth)</li>
+  <li><strong>OpenAlex</strong> — academic metadata lookup (free, no key)</li>
+  <li><strong>CrossRef</strong> — DOI / metadata resolution (free, no key)</li>
+  <li><strong>OpenAI / Replit AI Integrations</strong> — used by LLM-assisted scripts</li>
 </ul>
 
-<p class="muted">Removed: Feishu, Tencent Docs, Shimo, WeChat, Aliyun SMS, Suno, Zoom, Three.js direction lab.</p>
+<h3>Source-control mirrors</h3>
+<ul>
+  <li><code>tesolchina/hanglisimonwang</code> — active private mirror (this workspace)</li>
+  <li><code>tesolchina/SSCIagent</code> — historical private mirror (DocAI history before the 2026-04-30 strip-down)</li>
+  <li><code>tesolchina/hanglisimonwang-kb</code> — public agent-onboarding page (this site)</li>
+</ul>
 
 <footer>
   Built as a public agent-onboarding page for the <code>hanglisimonwang</code> workspace.

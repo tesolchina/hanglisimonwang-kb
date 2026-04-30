@@ -127,7 +127,7 @@ ls projects/linda-speaking-research/         # the only active research project<
   <tr><th>Path</th><th>Contents</th></tr>
   <tr><td><code>replit.md</code></td><td>Canonical agent instructions — <strong>read this first</strong></td></tr>
   <tr><td><code>projects/linda-speaking-research/</code></td><td>The single active research project (see §03 and the layout below)</td></tr>
-  <tr><td><code>data/papers/</code></td><td>~2.5 GB of journal corpora + a structured wiki (see layout below)</td></tr>
+  <tr><td><code>data/papers/</code></td><td>The distilled paper wiki + ranking notes (see layout below)</td></tr>
   <tr><td><code>scripts/</code></td><td>12 research-supporting Python &amp; Node scripts (see §04)</td></tr>
   <tr><td><code>manuscript&nbsp;text&nbsp;-&nbsp;revision0425.docx</code></td><td>Working manuscript draft (top-level for quick access)</td></tr>
   <tr><td><code>pyproject.toml</code> + <code>uv.lock</code></td><td>Python research environment, managed with <code>uv</code></td></tr>
@@ -149,14 +149,11 @@ ls projects/linda-speaking-research/         # the only active research project<
 </table>
 
 <h3><code>data/papers/</code></h3>
-<p>Three full back-runs of journal corpora plus a structured paper wiki built on top of them.</p>
+<p>The distilled paper wiki and a journal-ranking notes file. The raw journal back-runs (Applied Linguistics, ESP, JEAP) were deleted on 2026-04-30 to keep the repo lean — only the synthesised wiki output remains in version control.</p>
 <table>
   <tr><th>Path</th><th>Contents</th></tr>
-  <tr><td><code>AppliedLinguistics/</code></td><td><em>Applied Linguistics</em>, 1980 → 2026 (~1.1 GB)</td></tr>
-  <tr><td><code>ESP/</code></td><td><em>English for Specific Purposes</em>, 1986 → present (~655 MB)</td></tr>
-  <tr><td><code>JEAP/</code></td><td><em>Journal of English for Academic Purposes</em>, 2002 → present (~797 MB)</td></tr>
-  <tr><td><code>rankCompile.md</code></td><td>Aggregated journal ranking notes</td></tr>
-  <tr><td><code>wiki/</code></td><td>Structured paper wiki (~4 MB), populated by <code>scripts/jeap_wiki_ingest.py</code></td></tr>
+  <tr><td><code>rankCompile.md</code></td><td>Aggregated journal-ranking notes</td></tr>
+  <tr><td><code>wiki/</code></td><td>Structured paper wiki (~4 MB)</td></tr>
   <tr><td>&nbsp;&nbsp;<code>wiki/AGENTS.md</code></td><td>Wiki schema, ID conventions, validation gates — read before editing the wiki</td></tr>
   <tr><td>&nbsp;&nbsp;<code>wiki/index.md</code></td><td>Top-level index of ingested papers</td></tr>
   <tr><td>&nbsp;&nbsp;<code>wiki/sources/</code></td><td>One markdown file per paper (metadata + extracted notes)</td></tr>
@@ -165,6 +162,7 @@ ls projects/linda-speaking-research/         # the only active research project<
   <tr><td>&nbsp;&nbsp;<code>wiki/syntheses/</code></td><td>Cross-paper synthesis notes</td></tr>
   <tr><td>&nbsp;&nbsp;<code>wiki/log.md</code></td><td>Append-only ingest log</td></tr>
 </table>
+<p class="muted">The original PDFs for those three journals can be re-downloaded from the publishers if a new ingest is needed; the historical mirror at <code>tesolchina/SSCIagent</code> still has the last in-repo copy.</p>
 
 <h3><code>scripts/</code></h3>
 <p>Flat layout — every file is runnable from the repo root. See §04 for the per-script purpose table.</p>

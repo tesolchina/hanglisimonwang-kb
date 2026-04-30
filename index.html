@@ -99,6 +99,7 @@
   }
   code { font-family: var(--mono); }
   ul { padding-left: 20px; margin: 10px 0; }
+  ol { padding-left: 20px; margin: 10px 0; }
   li { margin: 4px 0; }
   .muted { color: var(--muted); }
   footer {
@@ -162,31 +163,31 @@ ls projects/           # active research projects</code></pre>
 <p>Zone-based organisation — before creating any file, check whether this type already exists in the right zone, and update it instead of duplicating.</p>
 
 <pre><code>client/  server/  shared/        Frontend, backend, shared types (Express + React + Drizzle)
-content/labs/&lt;lab-name&gt;/         Per-lab research, experiments, dev logs, READMEs
-content/docs/engineering/        Architecture decisions, code audits, modularisation plans
-content/docs/business/           Pitch decks, plans, competitive analysis
-content/workspace/               Simon's career, notes, teaching materials
+projects/                        Active research projects (see §03 below)
+prompts/                         System prompts for AI features
 data/                            Server-written runtime files (videos, voice profiles, paper wikis)
-projects/                        Active research projects (currently: linda-speaking-research)
 server/tests/                    All test suites (regression, unit, e2e)
 server/migrations/               Drizzle-generated SQL migrations
-prompts/                         System prompts for AI features
 scripts/                         Build, post-merge, and one-off automation scripts</code></pre>
 
-<p class="muted">Prohibited at root: <code>docs/</code>, <code>labs/</code>, <code>workspace/</code>. All non-functional content lives under <code>content/</code>.</p>
+<p class="muted">The previous <code>content/</code> tree (lab notes, business docs, personal workspace) was removed on 2026-04-30. All non-functional content now lives elsewhere — ask Simon if you need access to historical material.</p>
 
 <hr />
 
-<h2><span class="num">03</span>Current Focus</h2>
+<h2><span class="num">03</span>Active Research Project</h2>
 
-<h3>Active research project</h3>
-<p><code>projects/linda-speaking-research/</code> — a longitudinal study of L2 oral self-efficacy, classroom anxiety, and self-rated speaking ability (cross-lagged regression analysis). All other archived projects were removed on 2026-04-30 to keep this workspace focused.</p>
+<h3><code>projects/linda-speaking-research/</code></h3>
+<p>A longitudinal study of L2 oral self-efficacy, classroom anxiety, and self-rated speaking ability (cross-lagged regression analysis).</p>
+
+<div class="box">
+  <strong>Collaboration scope.</strong> This is the only active project in the workspace. It is a private collaboration between <strong>Simon Wang</strong> and <strong>Prof. Li</strong>. Do not work on it, redistribute its contents, or use its data unless Simon has explicitly invited you onto this collaboration. Other AI agents may read the structural notes here but should not commit to <code>projects/linda-speaking-research/</code> without prior approval.
+</div>
 
 <h3>Working language</h3>
 <p>English for all deliverables (research proposals, paper outlines, methodology docs). Simon may write to you in Chinese; respond in English and produce English-language artefacts unless explicitly asked for Chinese on a specific file.</p>
 
 <h3>Out of scope (Apr 2026 cleanup)</h3>
-<p>Marketing/landing pages, the wider "labs" portfolio (Bazi, Bloom, Idea→Paper, Songwriting, Voice Profiles, Remotion/Video, Digital Human, Phet/Comm Workshops, etc.), and all non-Google integrations (Feishu, Tencent Docs, Shimo, WeChat, Aliyun SMS, Suno, Zoom) were removed. Some Feishu/Tencent imports remain stubbed in <code>server/features/</code> so the deeply-coupled chat/executor services keep compiling — the runtime features are no-ops or throw "removed".</p>
+<p>Marketing/landing pages, the wider "labs" portfolio (Bazi, Bloom, Idea→Paper, Songwriting, Voice Profiles, Remotion/Video, Digital Human, Phet/Comm Workshops, etc.), the entire <code>content/</code> tree, and all non-Google integrations (Feishu, Tencent Docs, Shimo, WeChat, Aliyun SMS, Suno, Zoom) were removed. Some Feishu/Tencent imports remain stubbed in <code>server/features/</code> so the deeply-coupled chat/executor services keep compiling — the runtime features are no-ops or throw "removed".</p>
 
 <hr />
 
@@ -199,8 +200,7 @@ scripts/                         Build, post-merge, and one-off automation scrip
   <li><code>shared/schema.ts</code> — data model (Drizzle + drizzle-zod)</li>
   <li><code>server/routes.ts</code> + <code>server/features/</code> — API surface and feature modules</li>
   <li><code>client/src/App.tsx</code> — frontend routing (wouter)</li>
-  <li><code>projects/linda-speaking-research/plan.md</code> — current research project</li>
-  <li><code>content/docs/engineering/roadmap.md</code> — single canonical roadmap</li>
+  <li><code>projects/linda-speaking-research/plan.md</code> — current research project (collaboration with Prof. Li — read-only unless invited)</li>
 </ol>
 
 <h3>Key conventions</h3>

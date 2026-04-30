@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Agent Onboarding · hanglisimonwang</title>
+<meta name="description" content="Public agent-onboarding notes for Simon Wang's hanglisimonwang research workspace. Read this before cloning the private repo." />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="Agent Onboarding · hanglisimonwang" />
+<meta property="og:description" content="Public agent-onboarding notes for Simon Wang's hanglisimonwang research workspace." />
+<meta property="og:type" content="website" />
+<style>
+  :root {
+    --bg: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #6b6b6b;
+    --rule: #e5e5e5;
+    --box-bg: #f4f6fa;
+    --box-rule: #dde2ec;
+    --link: #2046d6;
+    --accent: #1a1a1a;
+    --mono: ui-monospace, "SF Mono", "JetBrains Mono", "Fira Code", "Roboto Mono", Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e0f12;
+      --fg: #e6e8ec;
+      --muted: #8b9099;
+      --rule: #232730;
+      --box-bg: #161922;
+      --box-rule: #232a36;
+      --link: #7aa2ff;
+      --accent: #e6e8ec;
+    }
+  }
+  html, body { background: var(--bg); color: var(--fg); }
+  body {
+    font-family: var(--mono);
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0;
+    padding: 48px 24px 96px;
+    -webkit-font-smoothing: antialiased;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; }
+  a:hover { text-decoration-thickness: 2px; }
+  .crumb { color: var(--muted); margin-bottom: 18px; }
+  .crumb span { color: var(--accent); }
+  h1 {
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0 0 12px 0;
+    letter-spacing: -0.01em;
+  }
+  h2 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 56px 0 18px 0;
+    letter-spacing: -0.005em;
+  }
+  h2 .num { color: var(--muted); font-weight: 400; margin-right: 10px; }
+  h3 {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    margin: 28px 0 8px 0;
+  }
+  p { margin: 12px 0; }
+  hr {
+    border: 0;
+    border-top: 1px solid var(--rule);
+    margin: 36px 0;
+  }
+  .meta { color: var(--muted); margin: 6px 0 0 0; }
+  .meta strong { color: var(--fg); font-weight: 500; }
+  .updated { color: var(--muted); margin: 4px 0 24px; font-size: 13px; }
+  .box {
+    background: var(--box-bg);
+    border: 1px solid var(--box-rule);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 18px 0;
+  }
+  .links { display: grid; grid-template-columns: 70px 1fr; row-gap: 4px; column-gap: 12px; }
+  .links .label { color: var(--muted); }
+  .box .footnote { color: var(--muted); margin-top: 10px; font-size: 13px; }
+  pre {
+    background: var(--box-bg);
+    border: 1px solid var(--box-rule);
+    border-radius: 6px;
+    padding: 14px 18px;
+    margin: 14px 0;
+    overflow-x: auto;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  code { font-family: var(--mono); }
+  ul { padding-left: 20px; margin: 10px 0; }
+  li { margin: 4px 0; }
+  .muted { color: var(--muted); }
+  footer {
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    color: var(--muted);
+    font-size: 12px;
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+<main>
+
+<div class="crumb">hanglisimonwang / knowledge-base / <span>onboarding</span></div>
+
+<h1>Agent Onboarding &amp; Reading Notes</h1>
+<p class="meta">Simon Wang &nbsp;·&nbsp; HKBU Applied Linguistics &nbsp;·&nbsp; <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a></p>
+<p class="updated">Last updated: 2026-04-30</p>
+
+<div class="box">
+  <div class="links">
+    <span class="label">github</span><span><a href="https://github.com/tesolchina/hanglisimonwang">github.com/tesolchina/hanglisimonwang</a> <span class="muted">(private)</span></span>
+    <span class="label">replit</span><span class="muted">private workspace — ask Simon for an invite</span>
+    <span class="label">contact</span><span><a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a></span>
+  </div>
+  <div class="footnote">This page covers: project positioning · access · codebase map · current focus · code-reading method</div>
+</div>
+
+<hr />
+
+<h2><span class="num">00</span>Project Positioning</h2>
+
+<h3>What this is</h3>
+<p><code>hanglisimonwang</code> is Simon Wang's private research workspace, built on the DocAI platform — a fullstack web app (Express + React + Postgres on Replit) for academic-paper publishing. It integrates with Google Workspace (Drive, Docs, Mail, Calendar, Sheets) and provides paper-publishing tooling: manuscript review, OpenReview integration, systematic reviews, reading-list tracing, lab-meeting minutes, scientific figures, posters, slides, and an AI chat aware of the active document context.</p>
+
+<h3>Who this page is for</h3>
+<p>Other AI agents (Cursor, Claude Code, Codex CLI, etc.) that Simon points at this workspace. Read this <em>first</em>, then ask Simon for a personal-access token to clone the private repo.</p>
+
+<h3>What is <em>not</em> here</h3>
+<p>Confidential research data, manuscript drafts, participant data, internal credentials, or anything covered by an NDA. This page lists only public, non-sensitive structural information.</p>
+
+<hr />
+
+<h2><span class="num">01</span>Access</h2>
+
+<p>The actual workspace is a <strong>private</strong> GitHub repository. To work on it you need an access token from Simon.</p>
+
+<pre><code>git clone https://&lt;token&gt;@github.com/tesolchina/hanglisimonwang.git
+cd hanglisimonwang
+cat replit.md          # canonical agent instructions
+ls projects/           # active research projects</code></pre>
+
+<p>If you do not have a token, email <a href="mailto:simonwang@hkbu.edu.hk">simonwang@hkbu.edu.hk</a> and explain which agent you are and which task you have been assigned.</p>
+
+<hr />
+
+<h2><span class="num">02</span>Codebase Map</h2>
+
+<p>Zone-based organisation — before creating any file, check whether this type already exists in the right zone, and update it instead of duplicating.</p>
+
+<pre><code>client/  server/  shared/        Frontend, backend, shared types (Express + React + Drizzle)
+content/labs/&lt;lab-name&gt;/         Per-lab research, experiments, dev logs, READMEs
+content/docs/engineering/        Architecture decisions, code audits, modularisation plans
+content/docs/business/           Pitch decks, plans, competitive analysis
+content/workspace/               Simon's career, notes, teaching materials
+data/                            Server-written runtime files (videos, voice profiles, paper wikis)
+projects/                        Active research projects (currently: linda-speaking-research)
+server/tests/                    All test suites (regression, unit, e2e)
+server/migrations/               Drizzle-generated SQL migrations
+prompts/                         System prompts for AI features
+scripts/                         Build, post-merge, and one-off automation scripts</code></pre>
+
+<p class="muted">Prohibited at root: <code>docs/</code>, <code>labs/</code>, <code>workspace/</code>. All non-functional content lives under <code>content/</code>.</p>
+
+<hr />
+
+<h2><span class="num">03</span>Current Focus</h2>
+
+<h3>Active research project</h3>
+<p><code>projects/linda-speaking-research/</code> — a longitudinal study of L2 oral self-efficacy, classroom anxiety, and self-rated speaking ability (cross-lagged regression analysis). All other archived projects were removed on 2026-04-30 to keep this workspace focused.</p>
+
+<h3>Working language</h3>
+<p>English for all deliverables (research proposals, paper outlines, methodology docs). Simon may write to you in Chinese; respond in English and produce English-language artefacts unless explicitly asked for Chinese on a specific file.</p>
+
+<h3>Out of scope (Apr 2026 cleanup)</h3>
+<p>Marketing/landing pages, the wider "labs" portfolio (Bazi, Bloom, Idea→Paper, Songwriting, Voice Profiles, Remotion/Video, Digital Human, Phet/Comm Workshops, etc.), and all non-Google integrations (Feishu, Tencent Docs, Shimo, WeChat, Aliyun SMS, Suno, Zoom) were removed. Some Feishu/Tencent imports remain stubbed in <code>server/features/</code> so the deeply-coupled chat/executor services keep compiling — the runtime features are no-ops or throw "removed".</p>
+
+<hr />
+
+<h2><span class="num">04</span>Code-Reading Method</h2>
+
+<p>Recommended reading order when you first land in the repo:</p>
+
+<ol>
+  <li><code>replit.md</code> — canonical agent instructions, scope, conventions</li>
+  <li><code>shared/schema.ts</code> — data model (Drizzle + drizzle-zod)</li>
+  <li><code>server/routes.ts</code> + <code>server/features/</code> — API surface and feature modules</li>
+  <li><code>client/src/App.tsx</code> — frontend routing (wouter)</li>
+  <li><code>projects/linda-speaking-research/plan.md</code> — current research project</li>
+  <li><code>content/docs/engineering/roadmap.md</code> — single canonical roadmap</li>
+</ol>
+
+<h3>Key conventions</h3>
+<ul>
+  <li>PostgreSQL <code>snake_case</code> columns ↔ TypeScript <code>camelCase</code></li>
+  <li>Drizzle migrations are <strong>additive-only</strong> — never destructive</li>
+  <li>Routes stay thin; business logic lives in <code>server/services/</code> and <code>server/features/</code></li>
+  <li>System prompts are Markdown files in <code>server/prompts/</code> and <code>prompts/</code></li>
+  <li>All <code>log.error()</code> calls and audit events are persisted to the <code>chat_logs</code> table</li>
+</ul>
+
+<hr />
+
+<h2><span class="num">05</span>External Dependencies</h2>
+
+<ul>
+  <li><strong>Google Workspace</strong> — sole identity provider (Google OAuth) and primary document/data integration (Drive, Docs, Mail, Calendar, Sheets, Tasks)</li>
+  <li><strong>LLM APIs</strong> — chat, content generation, tool execution (via Replit AI Integrations / OpenRouter)</li>
+  <li><strong>OpenAlex</strong> — academic metadata lookup</li>
+</ul>
+
+<p class="muted">Removed: Feishu, Tencent Docs, Shimo, WeChat, Aliyun SMS, Suno, Zoom, Three.js direction lab.</p>
+
+<footer>
+  Built as a public agent-onboarding page for the <code>hanglisimonwang</code> workspace.
+  Source: <a href="https://github.com/tesolchina/hanglisimonwang-kb">github.com/tesolchina/hanglisimonwang-kb</a>
+</footer>
+
+</main>
+</body>
+</html>
